@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     productId: '#123-asdf-789-retey-bhye-00000',
     image: 'images/bed/download (1).jpg',
@@ -23,7 +23,7 @@ const products = [
     productId: '3v334-gzhaj-dfgqu-i0ybw',
     image: 'images/bed/download (3).jpg',
     rating: {
-      rating_image: 'images/bed/download (5).jpg',
+      rating_image: 'images/rating/rating(4).jpg',
       rating_people: 1000
     },
     name: 'Civic',
