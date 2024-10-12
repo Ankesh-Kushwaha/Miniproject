@@ -1,0 +1,111 @@
+.header-section{
+   background-color: #f1d0d0;
+   margin-top:25px;
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+   justify-content: space-around;
+   border:5px;
+   height:50px;
+   width:100%;
+}
+
+
+.logo-design,.cart-image{
+  margin-top:0;
+    height:100px;
+    width:100px;
+    background-color: transparent;
+    cursor:pointer
+}
+
+.search-space{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  height:30px;
+  width:250px;
+  border:none;
+  border-radius:10px;
+  cursor: pointer;
+  color:black;
+}
+
+.search-button{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+    border:5px;
+    height:30px;
+    background-color: rgb(232, 99, 99);
+    border-radius: 5px;
+    width:75px;
+    cursor:pointer;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: block;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:white;
+  box-shadow: 0px 8px 16px rgba(110, 31, 31, 0.2);
+  min-width: 160px;
+  z-index: 1;
+}
+
+.drop-down ul,.drop-down li{
+  margin:0;
+  padding:0;
+}
+
+.menu{
+  list-style: none;
+}
+.dropdown-content li {
+  list-style: none;
+  width: 100%;
+}
+
+.dropdown-content li a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content li a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown button hover */
+.dropdown:hover .dropbtn {
+  background-color: #555;
+}
+
+
+

@@ -1,0 +1,68 @@
+.product-container{
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+  margin-top:40px;
+  margin-left:30px;
+  justify-content: space-around;
+}
+.product-image-css{
+    height:200px;
+    width: 300px;
+}
+
+.rating-css{
+  background: none;
+  height:50px;
+  width:140px;
+}
+
+.rating-section {
+  display: flex;
+  align-items: center; /* Vertically centers the content */
+}
+
+.product-rating {
+  margin-right:70px; /* Adds some space between the image and the number */
+}
+
+.rated-people {
+  font-size: 30px; /* Adjust font size if needed */
+}
+
+.product-detail {
+  display: flex;
+  align-items: center;
+  flex-direction: row; /* Optional: stack product-name and product-price vertically */
+}
+
+.product-name {
+  overflow-wrap: break-word;  /* Allow breaking long words */
+  word-wrap: break-word;      /* Backward compatibility for older browsers */
+  width: 50%;                /* Ensures it fits within the container */
+  text-align: start;         /* Optional: Centers the text */
+}
+
+
+.product-price{
+   margin-left:50px;
+   height:50px;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: 700;
+}
+
+.button-margin{
+   margin-left:90px;
+}
+
+.rent-button{
+   height:50px;
+   width:150px;
+   background-color: rgb(165, 234, 26);
+   border:none;
+   border-radius:15px;
+}
+
+
+.item-container{
+  margin-bottom: 20px;
+}
