@@ -1,12 +1,12 @@
 .header-section{
-   background-color: #8eeb50;
+   background-color: #2ac71ea3;
    margin-top:25px;
    display: flex;
    align-items: center;
    flex-direction: row;
    justify-content: space-around;
    border:5px;
-   height:50px;
+   height:70px;
    width:100%;
 }
 
