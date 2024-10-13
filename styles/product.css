@@ -1,3 +1,6 @@
+body{
+  background-color: aliceblue;
+}
 .product-container{
   display: grid;
   grid-template-columns: 300px 300px 300px 300px;
@@ -6,9 +9,33 @@
   justify-content: space-around;
   z-index:0;
 }
-.product-image-css{
-    height:200px;
-    width: 300px;
+
+.item-container{
+  border-right:1px solid rgb(46, 118, 107);
+  width:320px;
+  height:400px;
+}
+
+.product-image-css { 
+  height: 200px;
+  width: 300px;
+  cursor: pointer;
+  top: -50px; 
+  left: -35px; 
+  display: block; 
+  z-index: 999; 
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  cursor: pointer; 
+  transition: all 0.3s ease; /* Standard property */
+  -webkit-transition: all 0.3s ease; /* Webkit fallback */
+}
+
+
+.product-image :hover{
+   transform:scale(1.5);
+   border:2px;
+   border-radius:5px;
+   animation: forwards;
 }
 
 .rating-css{
@@ -58,12 +85,25 @@
 .rent-button{
    height:50px;
    width:150px;
-   background-color: rgb(165, 234, 26);
+   font-weight:600;
+   background-color: rgb(155, 217, 31);
    border:none;
    border-radius:15px;
    cursor:pointer;
+   box-shadow: 0 8px 16px 0 rgba(64, 179, 6, 0.849), 0 6px 20px 0 rgba(48, 140, 150, 0.832);
 }
 
+.rent-button:hover{
+     transform:scale(1.5);
+      cursor: pointer;
+      top: -50px; 
+      left: -35px; 
+      display: block; 
+      z-index: 999; 
+      cursor: pointer; 
+      transition: all 0.3s ease; /* Standard property */
+      -webkit-transition: all 0.3s ease; /* Webkit fallback */
+}
 
 .item-container{
   margin-bottom: 20px;

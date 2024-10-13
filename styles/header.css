@@ -1,12 +1,12 @@
 .header-section{
-   background-color:rgba(129, 185, 7, 0.94);
+   background-color:rgba(8, 10, 64, 0.94);
    margin-top:0px;
    display: flex;
    align-items: center;
    flex-direction: row;
    justify-content: space-around;
    border:5px;
-   height:100px;
+   height:120px;
    width:100%;
    position: fixed;
    top: 0;
@@ -21,9 +21,19 @@
     height:65px;
     width:100px;
     background-color: transparent;
-    cursor:pointer
+    cursor:pointer;
 }
 
+.cart-quantity{
+  margin-top:3px;
+  height:10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  position:absolute;
+  margin-left:40px;
+  background-color:transparent;
+  color:#45693f
+}
 .search-space{
   font-family: Georgia, 'Times New Roman', Times, serif;
   height:40px;
@@ -37,6 +47,7 @@
 .search-button{
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin-left:10px;
+  position:relative;
     border:5px;
     height:40px;
     background-color: rgb(232, 99, 99);

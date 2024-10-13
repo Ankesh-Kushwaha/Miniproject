@@ -14,7 +14,7 @@ products.forEach((product)=>{
               </div>
 
               <div class="rated-people">
-                ${product.rating.rating_people}
+                ${product.rating.rating_people}*
               </div>
             </div>
 
@@ -29,7 +29,7 @@ products.forEach((product)=>{
 
             <div class="button-margin">
               <button class="rent-button">
-                Rent
+                Rent it  &#x1F642;
               </button></div>   
         </div>
     `
