@@ -1,0 +1,85 @@
+.checkout-title{
+  display:flex;
+  align-items: center;
+  align-content: center;
+  margin-left:40%;
+}
+
+.checkout-logo{
+   height:150px;
+   width:150px;
+}
+
+.checkout-quantity{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 800;
+  font-size: 35px;
+  font-variant: normal;
+  color:rgb(51, 89, 177)
+}
+
+.delivery-section-grid{
+  display:grid;
+  height: 320px;
+  width:600px;
+  margin-left:20px;
+  grid-template-columns: 300px 300px;
+  border:2px solid black;
+  margin-bottom:10px;
+}
+
+.delivery-date{
+  display:grid;
+  grid-template-rows: 40px 40px 40px 40px;
+  margin-left:40px;
+  margin-top:50px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: rgb(95, 107, 11);
+}
+
+.item-image-detail{
+   margin-top:5px;
+   margin-left:5px;
+   border:1px solid black;
+   height:180px;
+}
+
+.item-name{
+  font-family: 'Times New Roman', Times, serif;;
+  font-weight: 600;
+  font-style: normal;
+  margin-left:5px;
+  overflow-wrap: break-word;  /* Allow breaking long words */
+  word-wrap: break-word;      /* Backward compatibility for older browsers */
+  width: 100%;                /* Ensures it fits within the container */
+  text-align: start;         /* Optional: Centers the text */
+  color:rgb(3, 30, 54);
+  font-size: 20px;
+}
+
+.item-price-and-quantity{
+  display:flex;
+  align-content: space-between;
+  justify-content: space-around;
+  font-family: 'Times New Roman', Times, serif;;
+  font-weight: 600;
+  color:rgb(22, 94, 28);
+  margin-left:10px;
+  margin-top:15px;
+  margin-bottom:15px;
+}
+
+.remove-item{
+   height:40px;
+   margin-left:100px;
+   width:100px;
+   border:none;
+   border-radius: 5px;
+   background-color: rgb(211, 9, 9);
+   color:aliceblue;
+   font-family: 'Times New Roman', Times, serif;
+   font-size: medium;
+   font-weight: 300;
+}
