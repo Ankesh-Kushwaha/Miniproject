@@ -1,5 +1,4 @@
 
-// export let cart=[];
  export let cart=JSON.parse(localStorage.getItem('cart')) || 
  [{
   productId:'#123-asdf-789-retey-bhye-00000',
@@ -30,4 +29,15 @@ function storeItem(){
         })
       }
       storeItem();
+ }
+
+ export function removeFromCart(productId){
+     const newCart=[];
+     cart.forEach((product)=>{
+         if(product.productId !==productId){
+             newCart.push(product);
+         }
+     })
+    cart=newCart;
+    storeItem();
  }

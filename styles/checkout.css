@@ -81,5 +81,6 @@
    color:aliceblue;
    font-family: 'Times New Roman', Times, serif;
    font-size: medium;
+   cursor:pointer;
    font-weight: 300;
 }
