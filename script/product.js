@@ -30,7 +30,7 @@ products.forEach((product)=>{
 
             <div class="button-margin">
               <button class="rent-button js-rent-button" data-product-id=${product.productId}>
-                Rent it  &#x1F642;
+                Rent it !
               </button></div>   
         </div>
     `
