@@ -1,6 +1,11 @@
 import { cart ,removeFromCart } from "./cart.js";
 import { products } from "../data/data.js";
 import { findProduct } from "./utils/findProduct.js";
+import dayjs   from   'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+
+const time = dayjs().format('dddd, MMMM D'); // Example of a valid format
+console.log(time);
 
 export function cartsummaryRender(){
   let cartItemHTML = ''; 
@@ -22,9 +27,9 @@ export function cartsummaryRender(){
        <div class="delivery-date-detail">
          <div class="delivery-date">
            <div>Delivery Date :</div>
-           <div><input type="radio">Monday 15 october</div>
-           <div><input type="radio"> Tuesday 16 october</div>
-           <div><input type="radio">WednesDay 17 october</div>
+           <div><input type="radio">${time}</div>
+           <div><input type="radio"> ${time}</div>
+           <div><input type="radio">${time}</div>
          </div>
        </div>
      </div>
