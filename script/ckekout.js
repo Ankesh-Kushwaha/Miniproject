@@ -64,8 +64,7 @@ document.querySelectorAll('.js-remove-item')
            container.remove();
           
         }
-        cartsummaryRender();
-        
+        cartsummaryRender();  
     });
 });
 
