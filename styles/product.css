@@ -20,13 +20,16 @@ body{
   height: 200px;
   width: 300px;
   cursor: pointer;
-  border:1px solid black;
+  border:2ch;
   top: -50px; 
   left: -35px; 
   display: block; 
   z-index: 999; 
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   cursor: pointer; 
+  aspect-ratio: 5/2;
+  object-fit:cover;
+  mix-blend-mode:normal;
   transition: all 0.3s ease; /* Standard property */
   -webkit-transition: all 0.3s ease; /* Webkit fallback */
 }
@@ -43,6 +46,9 @@ body{
   background: none;
   height:50px;
   width:140px;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode:darken;
 }
 
 .rating-section {

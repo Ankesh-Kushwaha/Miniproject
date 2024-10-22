@@ -1,8 +1,7 @@
 .checkout-title{
   display:flex;
   align-items: center;
-  align-content: center;
-  margin-left:40%;
+  margin-left:3%;
 }
 
 .checkout-logo{
@@ -14,24 +13,26 @@
   font-family: 'Times New Roman', Times, serif;
   font-weight: 800;
   font-size: 35px;
+  margin-left:490px;
   font-variant: normal;
   color:rgb(51, 89, 177)
 }
 
 .delivery-section-grid{
   display:grid;
-  height: 320px;
-  width:600px;
+  height: 350px;
+  width:750px;
   margin-left:20px;
   grid-template-columns: 300px 300px;
   border:2px solid black;
+  box-shadow: 5px 5px 10px rgba(85, 27, 27, 0.5);
   margin-bottom:10px;
 }
 
 .delivery-date{
   display:grid;
   grid-template-rows: 40px 40px 40px 40px;
-  margin-left:40px;
+  margin-left:50px;
   margin-top:50px;
   font-family:'Times New Roman', Times, serif;
   font-weight: 600;
@@ -40,14 +41,18 @@
 }
 
 .item-image-detail{
-   margin-top:5px;
+   margin-top:2px;
    margin-left:5px;
-   border:1px solid black;
    height:180px;
+   aspect-ratio: 3/2;
+   object-fit: cover;
+   cursor:pointer;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+
 .item-name{
-  font-family: 'Times New Roman', Times, serif;;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: 600;
   font-style: normal;
   margin-left:5px;
@@ -67,20 +72,99 @@
   font-weight: 600;
   color:rgb(22, 94, 28);
   margin-left:10px;
-  margin-top:15px;
+  margin-top:5px;
   margin-bottom:15px;
 }
 
 .remove-item{
-   height:40px;
-   margin-left:100px;
-   width:100px;
-   border:none;
-   border-radius: 5px;
-   background-color: rgb(211, 9, 9);
-   color:aliceblue;
-   font-family: 'Times New Roman', Times, serif;
-   font-size: medium;
-   cursor:pointer;
-   font-weight: 300;
+  height:40px;
+  margin-left:100px;
+  width:100px;
+  border:none;
+  border-radius: 2px;
+  background-color: rgb(211, 9, 9);
+  color:aliceblue;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  cursor:pointer;
+  font-weight: 300;
+}
+
+.js-delivery-date{
+  height:50px;
+  width:280px;
+  font-family: 'Times New Roman', Times, serif;;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  color: rgb(95, 107, 11);
+}
+
+.delivery-and-payement-section-grid{
+   display:flex;
+   height:100vh;
+}
+
+.payement-section{
+   height:70%;
+   box-shadow: 5px 5px 10px rgba(59, 42, 42, 0.5);
+   margin-left:80px;
+   width:34%;
+}
+
+.order-summary-payement{
+   display:grid;
+   grid-template-rows: 50px 50px 50px 50px 50px;
+   justify-content:space-between;
+}
+
+.items-grid{
+  display: flex;
+  align-items: self-start;
+  justify-content:space-between;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+  font-weight: 600;
+  color:rgb(10, 64, 4)
+}
+
+.price{
+  margin-left:5px;
+  margin-right:220px;
+}
+
+.price-border,.total-before-tax{
+  margin-left:5px;
+  border-top:2px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  height:30px;
+}
+
+.checkout-items,.order-summary{
+  border-bottom:2px solid rgb(122, 177, 12);
+  height:50px;
+  width:280px;
+  font-family: 'Times New Roman', Times, serif;;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  color: rgba(74, 135, 5, 0.845);
+  margin-left:5px;
+  margin-top:5px;
+}
+
+.place-your-order{
+    margin-top:10px;
+    border:none;
+    margin-left:65px;
+    height:50px;
+    width:350px;
+    background-color:rgb(233, 233, 29);
+    color: black;
+    font-family: 'Times New Roman', Times, serif;;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor:pointer;
 }

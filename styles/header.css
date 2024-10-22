@@ -1,5 +1,5 @@
 .header-section{
-   background-color:rgba(8, 10, 64, 0.94);
+   background-color:rgb(22, 85, 127) ;
    margin-top:0px;
    display: flex;
    align-items: center;
@@ -9,7 +9,7 @@
    height:120px;
    width:100%;
    position: fixed;
-   top: 0;
+   top: 0px;
    left: 0;
    right: 0;
    height: 60px;
@@ -22,6 +22,8 @@
     width:100px;
     background-color: transparent;
     cursor:pointer;
+    aspect-ratio: 3/2;
+    object-fit: fill;
 }
 
 .cart-quantity{

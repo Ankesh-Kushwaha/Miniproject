@@ -1,6 +1,7 @@
 import {products} from '../data/data.js';
-import {cart,addTocart} from  '../script/cart.js';
+import {cart,addTocart} from  '../data/cart.js';
 
+function renderProductPage(){
 let productHtml='';
 products.forEach((product)=>{ 
   productHtml+=
@@ -61,3 +62,5 @@ document.querySelectorAll('.js-rent-button')
           updateCartQuantity();
      })
 })
+}
+renderProductPage();
