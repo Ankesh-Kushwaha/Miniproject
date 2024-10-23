@@ -5,19 +5,31 @@ import dayjs   from   'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { totalCartItem as cartQuantity, totalCartItem } from "../utils/totalCartItem.js";
 import { renderPayementSection } from "./payementsummary.js";
 import { fixedPrice } from "../utils/formatecurrency.js";
-
-
-const time = dayjs().format('dddd, MMMM D'); // Example of a valid format
-console.log(time);
+import { DeliveryOptionsId } from "../../data/optionId.js";
 
 export function cartsummaryRender(){
   let cartItemHTML = ''; 
   cart.forEach((cartItem) => {
     const matchingProduct=findProduct(cartItem.productId);
-    cartItemHTML += `
+
+    const deliveryOptionId=cartItem.cartOptionId;
+    let optionId;
+    DeliveryOptionsId.forEach((delivery)=>{
+        if(deliveryOptionId===delivery.deliveryOption){
+           optionId=delivery;
+        }
+    })
+
+    const today=dayjs();
+    const  expectedDate=today.add(optionId.day,'day');
+    const dateString=expectedDate.format('dddd,MMMM D');
+    console.log(dateString);
+
+
+  cartItemHTML += `
   <div class="delivery-section-grid js-deleivery-section-${matchingProduct.productId}">
         <div class="item-detail">
-           <div class="js-delivery-date"><b>Arrive On:</b> Wednesday ,october 2023</div>
+           <div class="js-delivery-date"><b>Arrive On:</b> ${dateString}</div>
            <div><img src= "${matchingProduct.image}" alt="" class="item-image-detail"></div>
            <div class="item-name">${matchingProduct.name}</div>
    
@@ -28,36 +40,10 @@ export function cartsummaryRender(){
              
         <div><button class="remove-item js-remove-item" data-product-id=${matchingProduct.productId}>Remove</button></div>
            </div>
-       <div class="delivery-date-detail">
-         <div class="delivery-date">
+       <div class="delivery-date-detail ">
+         <div class="delivery-date js-delivery-date-format">
            <div class="delivery-option-date">Delivery Date :</div>
-              <div class="delivery-option">
-                   <div>
-                     <input type="radio" name="${matchingProduct.productId}" class="inline-element radio-circle">
-                  
-                      <div class="inline-element">${time} </div>
-                    </div>
-                    <div class="delivery-option-shipping-charge">FREE -Shipping
-                    </div>
-              </div>
-
-              <div class="delivery-option">
-                 <div>
-                  <input type="radio" name="${matchingProduct. productId}" class="inline-element radio-circle"> 
-                   <div class="inline-element">${time}</div>
-                  </div>
-                   <div class="delivery-option-shipping-charge">&#8377 100 -Shipping</div>
-              </div>
-              
-              <div class="delivery-option">
-                 <div>
-                    <input type="radio"  name="${matchingProduct.productId}" class="inline-element radio-circle"> 
-                  
-                    <div class="inline-element">${time} </div>
-                  </div>
-                  <div class="delivery-option-shipping-charge"> &#8377 200 -Shipping</div> 
-              </div>   
-              
+              ${generateDeliveryDate(matchingProduct.productId,cartItem)} 
              <div class="choose-duration">
                <label for="cars">Choose Duration:</label>
                 <select id="duration" name="time">
@@ -102,6 +88,39 @@ document.querySelectorAll('.js-remove-item')
         }  
     });
 });
+
+ function generateDeliveryDate(productId,cartItem){
+    let deliveryOptionHTML='';
+    DeliveryOptionsId.forEach((delivery)=>{
+         const today=dayjs();
+         const  expectedDate=today.add(delivery.day,'day');
+         const dateString=expectedDate.format('dddd,MMMM D');
+
+         const priceString= delivery.price===0 ? 'FREE-Shipping' : `${delivery.price}-shipping`
+
+         const isChecked= cartItem.cartOptionId===delivery.deliveryOption;
+
+         console.log(isChecked);
+
+         deliveryOptionHTML+=`
+               <div class="delivery-option">
+                 <div>
+                    <input type="radio" 
+                     ${ isChecked ? 'checked' :''}
+                     name="${productId}" class="inline-element radio-circle"> 
+                  
+                    <div class="inline-element">
+                       ${dateString} 
+                    </div>
+                   </div>
+                  <div class="delivery-option-shipping-charge"> 
+                       &#8377 ${priceString}
+                  </div> 
+              </div> 
+         `
+    });
+    return deliveryOptionHTML;
+ }
 }
 
 

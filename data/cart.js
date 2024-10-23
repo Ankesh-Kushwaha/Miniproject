@@ -3,12 +3,12 @@
  [{
   productId:'#123-asdf-789-retey-bhye-00000',
   cartQuantity:1,
-  cartOptionId:1,
+  cartOptionId:'1',
 },
 { 
   productId:'cxv9v-3y6sp-v13zv-tcv4p',
   cartQuantity:1,
-  cartOptionId:2
+  cartOptionId:'2'
 }];
 
 function storeItem(){
@@ -30,7 +30,7 @@ function storeItem(){
         cart.push({
             productId:productId,
             cartQuantity:1,
-            cartOptionId:1,
+            cartOptionId:'1',
         })
       }
       storeItem();

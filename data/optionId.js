@@ -1,15 +1,15 @@
-const DeliveryOptionsId=[
-   { deliveryoption:'1',
+export const DeliveryOptionsId=[
+   { deliveryOption:'1',
      price:0,
-     day:'7'
+     day:7
    },
-   { deliveryoption:'2',
+   { deliveryOption:'2',
      price:100,
-     day:'3'
+     day:3
    }
    ,{
-    deliveryoption:'3',
+    deliveryOption:'3',
     price:200,
-    day:'1'
+    day:1
    }
 ]
