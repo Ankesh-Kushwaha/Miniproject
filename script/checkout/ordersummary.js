@@ -30,23 +30,45 @@ export function cartsummaryRender(){
            </div>
        <div class="delivery-date-detail">
          <div class="delivery-date">
-           <div>Delivery Date :</div>
-           <div><input type="radio">${time}</div>
-           <div><input type="radio"> ${time}</div>
-           <div><input type="radio">${time}</div>
-            <div>
-            <label for="cars">Choose Duration:</label>
-            <select id="duration" name="time">
-                <option value="volvo">1 month</option>
-              <option value="saab"> 2 month</option>
-               <option value="fiat"> 6 month</option>
-               <option value="audi">1 year</option>
-            </select></div>
-         </div>
-       </div>
+           <div class="delivery-option-date">Delivery Date :</div>
+              <div class="delivery-option">
+                   <div>
+                     <input type="radio" name="${matchingProduct.productId}" class="inline-element radio-circle">
+                  
+                      <div class="inline-element">${time} </div>
+                    </div>
+                    <div class="delivery-option-shipping-charge">FREE -Shipping
+                    </div>
+              </div>
 
-       
-       
+              <div class="delivery-option">
+                 <div>
+                  <input type="radio" name="${matchingProduct. productId}" class="inline-element radio-circle"> 
+                   <div class="inline-element">${time}</div>
+                  </div>
+                   <div class="delivery-option-shipping-charge">&#8377 100 -Shipping</div>
+              </div>
+              
+              <div class="delivery-option">
+                 <div>
+                    <input type="radio"  name="${matchingProduct.productId}" class="inline-element radio-circle"> 
+                  
+                    <div class="inline-element">${time} </div>
+                  </div>
+                  <div class="delivery-option-shipping-charge"> &#8377 200 -Shipping</div> 
+              </div>   
+              
+             <div class="choose-duration">
+               <label for="cars">Choose Duration:</label>
+                <select id="duration" name="time">
+                 <option value="volvo">1 month</option>
+                 <option value="saab"> 2 month</option>
+                 <option value="fiat"> 6 month</option>
+                 <option value="audi">1 year</option>
+                </select>
+             </div>
+         </div>
+       </div>  
      </div>
         
     `

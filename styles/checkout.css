@@ -29,15 +29,34 @@
   margin-bottom:10px;
 }
 
+.inline-element{
+  display: inline-block;
+  vertical-align: middle;
+}
 .delivery-date{
-  display:grid;
-  grid-template-rows: 40px 40px 40px 40px;
-  margin-left:50px;
-  margin-top:50px;
-  font-family:'Times New Roman', Times, serif;
-  font-weight: 600;
-  font-size: 22px;
-  color: rgb(95, 107, 11);
+   display: grid;
+   grid-template-rows: 50px 50px 50px 50px 50px;
+   margin-left:72px;
+   font-family: 'Times New Roman', Times, serif;
+   font-size: 20px;
+   font-weight: 600;
+   color: rgb(2, 110, 2);
+}
+
+.radio-circle{
+   transform:scale(1.5);
+}
+
+.delivery-option-date{
+  margin-top:15px;
+  margin-left:9px;
+  font-size:25px;
+}
+.delivery-option-shipping-charge{
+   font-size:15px;
+   margin-left:20px;
+   font-weight: 400;
+   color:rgb(21, 21, 85)
 }
 
 .item-image-detail{
@@ -96,7 +115,7 @@
   font-family: 'Times New Roman', Times, serif;;
   font-weight: 600;
   font-style: normal;
-  font-size: 20px;
+  font-size: 18px;
   color: rgb(95, 107, 11);
 }
 
@@ -112,11 +131,14 @@
    width:36%;
 }
 
+
 .order-summary-payement{
    display:grid;
    grid-template-rows: 50px 50px 50px 50px 50px;
    justify-content:space-between;
 }
+
+
 
 .items-grid{
   display: flex;
@@ -138,6 +160,11 @@
   border-top:2px solid black;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   height:30px;
+}
+
+.choose-duration{
+   margin-top:20px;
+   margin-left:30px;
 }
 
 .checkout-items,.order-summary{
@@ -168,3 +195,4 @@
     border-radius: 10px;
     cursor:pointer;
 }
+
