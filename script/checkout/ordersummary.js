@@ -4,6 +4,7 @@ import { findProduct } from "../utils/findProduct.js"
 import dayjs   from   'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { totalCartItem as cartQuantity, totalCartItem } from "../utils/totalCartItem.js";
 import { renderPayementSection } from "./payementsummary.js";
+import { fixedPrice } from "../utils/formatecurrency.js";
 
 
 const time = dayjs().format('dddd, MMMM D'); // Example of a valid format
@@ -22,7 +23,7 @@ export function cartsummaryRender(){
    
            <div class="item-price-and-quantity">
              <div class="item-quantity">Quantity:${cartItem.cartQuantity}</div>
-            <div class="item-price">Price: &#8377 ${matchingProduct.price}</div>
+            <div class="item-price">Price: &#8377 ${fixedPrice(matchingProduct.price)}</div>
        </div>
              
         <div><button class="remove-item js-remove-item" data-product-id=${matchingProduct.productId}>Remove</button></div>
