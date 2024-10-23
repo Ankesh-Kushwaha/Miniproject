@@ -20,7 +20,7 @@
 
 .delivery-section-grid{
   display:grid;
-  height: 350px;
+  height: 380px;
   width:750px;
   margin-left:20px;
   grid-template-columns: 300px 300px;
