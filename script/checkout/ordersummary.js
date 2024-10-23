@@ -2,6 +2,8 @@ import {cart,removeFromCart} from "../../data/cart.js"
 import { products } from "../../data/data.js";
 import { findProduct } from "../utils/findProduct.js"
 import dayjs   from   'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+import { totalCartItem as cartQuantity, totalCartItem } from "../utils/totalCartItem.js";
+import { renderPayementSection } from "./payementsummary.js";
 
 
 const time = dayjs().format('dddd, MMMM D'); // Example of a valid format
@@ -31,20 +33,25 @@ export function cartsummaryRender(){
            <div><input type="radio">${time}</div>
            <div><input type="radio"> ${time}</div>
            <div><input type="radio">${time}</div>
+            <div>
+            <label for="cars">Choose Duration:</label>
+            <select id="duration" name="time">
+                <option value="volvo">1 month</option>
+              <option value="saab"> 2 month</option>
+               <option value="fiat"> 6 month</option>
+               <option value="audi">1 year</option>
+            </select></div>
          </div>
-         
        </div>
+
+       
        
      </div>
         
     `
 });
 
-let totalCartItem=0;
-cart.forEach(()=>{
-   totalCartItem++;
-})
-
+let totalCartItem=cartQuantity();
 document.querySelector('.js-checkout-quantity')
 .innerHTML=`Checkout(${totalCartItem})`;
 
@@ -60,6 +67,7 @@ document.querySelectorAll('.js-remove-item')
         const productId = remove.dataset.productId;
         removeFromCart(productId);
         cartsummaryRender();  
+        renderPayementSection();
         // Escape the productId for use in querySelector
         const sanitizedProductId = CSS.escape(productId);
 
@@ -68,8 +76,7 @@ document.querySelectorAll('.js-remove-item')
          
         if(container){
            container.remove();
-        }
-       
+        }  
     });
 });
 }

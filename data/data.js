@@ -549,3 +549,14 @@ export const products = [
     price: 40000
   },
 ];
+
+
+export function matchingProduct(productId){
+    let matchingItem='';
+    products.forEach((product)=>{
+        if(productId=== product.productId){
+           matchingItem=product;
+        }
+    })
+    return matchingItem;
+}
