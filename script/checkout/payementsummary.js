@@ -13,7 +13,7 @@ export function renderPayementSection(){
     itemsPrice+= cartQuantity * matchingItem.price;
   })
   
-  const shippingAndHandling= 0.1*itemsPrice;
+  const shippingAndHandling= 0.01*itemsPrice;
   const totalBeforeTax = itemsPrice + shippingAndHandling;
   const GST= 0.18 * totalBeforeTax;
   const finalPrice= totalBeforeTax + GST;

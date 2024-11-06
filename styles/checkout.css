@@ -31,7 +31,7 @@
 
 .inline-element{
   display: inline-block;
-  vertical-align: middle;
+  vertical-align:middle;
 }
 .delivery-date{
    display: grid;
@@ -56,7 +56,7 @@
    font-size:15px;
    margin-left:20px;
    font-weight: 400;
-   color:rgb(21, 21, 85)
+   color:rgb(21, 21, 85);
 }
 
 .item-image-detail{

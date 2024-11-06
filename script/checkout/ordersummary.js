@@ -104,12 +104,12 @@ document.querySelectorAll('.js-remove-item')
 
          deliveryOptionHTML+=`
                <div class="delivery-option">
-                 <div>
+                 <div class="inline-element">
                     <input type="radio" 
                      ${ isChecked ? 'checked' :''}
-                     name="${productId}" class="inline-element radio-circle"> 
+                     name="${productId}" class="radio-circle"> 
                   
-                    <div class="inline-element">
+                    <div>
                        ${dateString} 
                     </div>
                    </div>
