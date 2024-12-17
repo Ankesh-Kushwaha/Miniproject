@@ -7,12 +7,15 @@ import { renderPayementSection } from "./payementsummary.js";
 import { fixedPrice } from "../utils/formatecurrency.js";
 import { DeliveryOptionsId } from "../../data/optionId.js";
 
+
 export function cartsummaryRender(){
   let cartItemHTML = ''; 
   cart.forEach((cartItem) => {
     const matchingProduct=findProduct(cartItem.productId);
 
-    const deliveryOptionId=cartItem.cartOptionId;
+     const deliveryOptionId = cartItem.cartOptionId;
+    
+
     let optionId={};
     DeliveryOptionsId.forEach((delivery)=>{
         if(deliveryOptionId===delivery.deliveryOption){
