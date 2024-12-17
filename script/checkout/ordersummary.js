@@ -13,7 +13,7 @@ export function cartsummaryRender(){
     const matchingProduct=findProduct(cartItem.productId);
 
     const deliveryOptionId=cartItem.cartOptionId;
-    let optionId;
+    let optionId={};
     DeliveryOptionsId.forEach((delivery)=>{
         if(deliveryOptionId===delivery.deliveryOption){
            optionId=delivery;
@@ -23,7 +23,6 @@ export function cartsummaryRender(){
     const today=dayjs();
     const  expectedDate=today.add(optionId.day,'day');
     const dateString=expectedDate.format('dddd,MMMM D');
-    console.log(dateString);
 
 
   cartItemHTML += `
@@ -99,8 +98,6 @@ document.querySelectorAll('.js-remove-item')
          const priceString= delivery.price===0 ? 'FREE-Shipping' : `${delivery.price}-shipping`
 
          const isChecked= cartItem.cartOptionId===delivery.deliveryOption;
-
-         console.log(isChecked);
 
          deliveryOptionHTML+=`
                <div class="delivery-option">
