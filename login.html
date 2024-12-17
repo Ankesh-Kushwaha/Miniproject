@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Website Login & Signup</title>
+  <link rel="icon" href="images/header/logo2.png">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+      flex-direction: column;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      width: 350px;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    /* Logo */
+    .logo {
+      width: 100px;
+      margin: 20px auto;
+    }
+
+    /* Form Styles */
+    form {
+      padding: 20px 30px;
+      display: none;
+      animation: slideDown 0.5s ease;
+    }
+
+    form.active {
+      display: block;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4e54c8;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #3b43a6;
+    }
+
+    .toggle-link {
+      color: #4e54c8;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Home Page */
+    .home {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      width: 100%;
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .home h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .home p {
+      font-size: 1.2em;
+    }
+
+    .home button {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      font-size: 1em;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .home button:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <img src="images/header/logo2.png" alt="Rental Logo" class="logo">
+
+    <!-- Login Form -->
+    <form id="loginForm" class="active" onsubmit="login(event)">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <div class="toggle-link" onclick="toggleForm('signupForm')">Don't have an account? Sign Up</div>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signupForm" onsubmit="signup(event)">
+      <h2>Sign Up</h2>
+      <input type="text" id="signupName" placeholder="Full Name" required>
+      <input type="email" id="signupEmail" placeholder="Email" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      
+      <button onclick="window.location.href='product.html'">Sign Up</button>
+
+
+      <div class="toggle-link" onclick="toggleForm('loginForm')">Already have an account? Login</div>
+    </form>
+  </div>
+
+  <!-- Home Page -->
+  <div class="home" id="product">
+    <h1>Welcome to Your Dashboard</h1>
+    <p>You have successfully logged in!</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    // Function to toggle between Login and Signup forms
+    function toggleForm(formId) {
+      document.getElementById('loginForm').classList.remove('active');
+      document.getElementById('signupForm').classList.remove('active');
+
+      document.getElementById(formId).classList.add('active');
+    }
+
+    // Simulate login function
+    function login(event) {
+      event.preventDefault();
+
+      // Here you can implement actual authentication logic
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      // Simple check for demonstration (you can replace with backend call)
+      if (email === "user@example.com" && password === "password123") {
+        document.getElementById('loginForm').classList.remove('active');
+        document.getElementById('homePage').style.display = 'block';
+      } else {
+        alert("Invalid credentials, please try again.");
+      }
+    }
+
+    // Simulate signup function
+    function signup(event) {
+      event.preventDefault();
+
+      // Here you can implement actual signup logic
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+
+      // Simulate user creation (replace with actual signup logic)
+      alert(`Account created for ${name} with email ${email}.`);
+
+      // Redirect to login form after signup
+      toggleForm('loginForm');
+    }
+
+    // Logout function
+    function logout() {
+      document.getElementById('homePage').style.display = 'none';
+      document.getElementById('loginForm').classList.add('active');
+    }
+  </script>
+</body>
+
+</html>

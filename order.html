@@ -1,11 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Place Your Order - Rental</title>
+  <link rel="icon" href="images/header/logo2.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    input[type="password"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .btn-submit {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background-color: #218838;
+    }
+
+    .form-footer {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    .homepage-link {
+      display: flex;
+      justify-content: center;
+    }
+
+    .payment-container {
+      display: none;
+      /* Hidden initially */
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .payment-container h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .btn-pay {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .btn-pay:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
+
 <body>
-      work in progress checkout after someTime!;
+  <!-- Order Form -->
+  <div class="form-container">
+    <h2>Place Your Order</h2>
+    <form id="order-form">
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+      </div>
+
+      <!-- Email Address -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <!-- Rental Dates -->
+      <div class="form-group">
+        <label for="start-date">Rental Start Date</label>
+        <input type="date" id="start-date" name="start-date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="end-date">Rental End Date</label>
+        <input type="date" id="end-date" name="end-date" required>
+      </div>
+
+      <!-- Rental Item -->
+      <div class="form-group">
+        <label for="rental-item">Select Rental Item</label>
+        <select id="rental-item" name="rental-item" required>
+          <option value="">-- Choose an item --</option>
+          <option value="car">Car</option>
+          <option value="bike">Bike</option>
+          <option value="equipment">Equipment</option>
+          <option value="furniture">Furniture</option>
+        </select>
+      </div>
+
+      <!-- Quantity -->
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter quantity" required>
+      </div>
+
+      <button type="button" onclick="placeOrder()" class="btn-submit">Place Order</button>
+    </form>
+
+    <div class="form-footer">
+      <p>We will contact you shortly after receiving your order!</p>
+    </div>
+  </div>
+
+  <!-- Payment Form -->
+  <div id="payment-container" class="payment-container">
+    <h2>Complete Your Payment</h2>
+    <form id="payment-form">
+      <div class="form-group">
+        <label for="card-number">Card Number</label>
+        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+      </div>
+
+      <div class="form-group">
+        <label for="expiry-date">Expiry Date</label>
+        <input type="text" id="expiry-date" placeholder="MM/YY" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="password" id="cvv" placeholder="123" required>
+      </div>
+
+      <button type="button" onclick="processPayment()" class="btn-pay">Pay Now</button>
+    </form>
+  </div>
+
+<!-- Link to Return to Homepage -->
+<div class="homepage-link">
+  <p><a href="product.html">Return to Homepage</a></p>
+  <p style="margin-left:20px"><a href="track.html">Track Your Order</a></p>
+</div>
+
+  <script>
+    // Function to simulate order placement
+    function placeOrder() {
+      alert("Your order has been placed successfully!");
+      document.querySelector('.form-container').style.display = 'none';
+      document.querySelector('#payment-container').style.display = 'block';
+    }
+
+    // Function to simulate payment processing
+    function processPayment() {
+      const cardNumber = document.getElementById('card-number').value;
+      const expiryDate = document.getElementById('expiry-date').value;
+      const cvv = document.getElementById('cvv').value;
+
+      if (cardNumber && expiryDate && cvv) {
+        alert("Payment Successful! Thank you for your order.");
+        // Reset the forms after successful payment
+        document.getElementById('payment-form').reset();
+        document.getElementById('order-form').reset();
+        document.querySelector('#payment-container').style.display = 'none';
+        document.querySelector('.form-container').style.display = 'block';
+      } else {
+        alert("Please fill in all payment details.");
+      }
+    }
+  </script>
 </body>
+
 </html>

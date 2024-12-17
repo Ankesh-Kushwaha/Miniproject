@@ -29,13 +29,14 @@
   margin-bottom:10px;
 }
 
+
 .inline-element{
-  display: inline-block;
-  vertical-align:middle;
+   display:flex;
 }
+
 .delivery-date{
-   display: grid;
-   grid-template-rows: 50px 50px 50px 50px 50px;
+   display: flex;
+   flex-direction: column;
    margin-left:72px;
    font-family: 'Times New Roman', Times, serif;
    font-size: 20px;

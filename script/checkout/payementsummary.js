@@ -38,3 +38,4 @@ export function renderPayementSection(){
    document.querySelector('.js-payement-section')
    .innerHTML=paymentHtml;
 }
+

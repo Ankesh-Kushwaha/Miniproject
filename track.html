@@ -1,0 +1,146 @@
+<!-- File: track.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Tracking</title>
+  <link rel="icon" href="images/header/logo2.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .tracking-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .btn-track {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .btn-track:hover {
+      background-color: #0056b3;
+    }
+
+    #tracking-result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .homepage-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .homepage-link a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .homepage-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tracking-container">
+    <h2>Track Your Order</h2>
+    <form id="tracking-form">
+      <div class="form-group">
+        <label for="order-id">Enter Order ID</label>
+        <input type="text" id="order-id" name="order-id" placeholder="e.g., ORD12345" required>
+      </div>
+      <button type="submit" class="btn-track">Track Order</button>
+    </form>
+
+    <div id="tracking-result">
+      <!-- Tracking result will be displayed here -->
+    </div>
+
+    <div class="homepage-link">
+      <a href="product.html">Back to Homepage</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("tracking-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Get the input value
+      const orderId = document.getElementById("order-id").value.trim();
+      const trackingResultDiv = document.getElementById("tracking-result");
+
+      // Simple validation for demonstration
+      if (orderId === "") {
+        trackingResultDiv.innerHTML = "<p style='color: red;'>Please enter a valid Order ID.</p>";
+        return;
+      }
+
+      // Simulate order tracking (replace this with actual API call if needed)
+      trackingResultDiv.innerHTML = "<p>Checking status for Order ID: <strong>" + orderId + "</strong>...</p>";
+
+      // Simulate delay with setTimeout
+      setTimeout(() => {
+        // Mock response data
+        const mockResponses = {
+          "ORD12345": "Your order is out for delivery and will arrive soon.",
+          "ORD67890": "Your order has been shipped and is in transit.",
+          "ORD11111": "Your order has been delivered. Thank you!",
+        };
+
+        // Show result or default message
+        const message = mockResponses[orderId] || "Order ID not found. Please check and try again.";
+        trackingResultDiv.innerHTML = "<p>" + message + "</p>";
+      }, 2000); // 2 seconds delay
+    });
+  </script>
+</body>
+
+</html>
